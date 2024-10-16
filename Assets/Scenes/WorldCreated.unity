@@ -5012,7 +5012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6010007
+      value: 1.6919999
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7228,7 +7228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6010007
+      value: 1.6919999
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19391,6 +19391,7 @@ GameObject:
   - component: {fileID: 1975102056}
   - component: {fileID: 1974003880}
   - component: {fileID: 1975102057}
+  - component: {fileID: 1975102058}
   m_Layer: 0
   m_Name: GunHeavy
   m_TagString: Untagged
@@ -19406,12 +19407,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972008552}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.952, y: 1.457, z: 0.976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.165, y: -0.208, z: 0.397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 269366175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1974003880
 MeshRenderer:
@@ -19476,6 +19477,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Gun
+--- !u!65 &1975102058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972008552}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.075498424, y: 0.31807214, z: 0.832286}
+  m_Center: {x: 0.000000044703484, y: 0.02280002, z: 0.27416432}
 --- !u!1 &1975414772
 GameObject:
   m_ObjectHideFlags: 0
@@ -19714,14 +19736,14 @@ PrefabInstance:
     - target: {fileID: 4575392483154827204, guid: a75c96bc0029f564081418f090245aa3, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 8957d22719775b84696dcbb435c8d020, type: 2}
     - target: {fileID: 7275182762224904769, guid: a75c96bc0029f564081418f090245aa3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.952
       objectReference: {fileID: 0}
     - target: {fileID: 7275182762224904769, guid: a75c96bc0029f564081418f090245aa3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000071525574
+      value: 0.091
       objectReference: {fileID: 0}
     - target: {fileID: 7275182762224904769, guid: a75c96bc0029f564081418f090245aa3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19781,7 +19803,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8411687515350047501, guid: a75c96bc0029f564081418f090245aa3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1972234824}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3439998574150946630, guid: a75c96bc0029f564081418f090245aa3, type: 3}
       insertIndex: -1
@@ -21573,7 +21598,6 @@ SceneRoots:
   - {fileID: 1023219709}
   - {fileID: 368780944}
   - {fileID: 711331116}
-  - {fileID: 1972234824}
   - {fileID: 699943759}
   - {fileID: 1323746682}
   - {fileID: 1522272779}

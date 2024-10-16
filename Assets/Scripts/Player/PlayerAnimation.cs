@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
 
-    
+    StarterAssetsInputs controller;
     Animation motion;
     Animator animator;
     // Start is called before the first frame update
@@ -24,8 +24,5 @@ public class PlayerAnimation : MonoBehaviour
         
     }
 
-    public void OnMove()
-    {
-        
-    }
+   
 }

@@ -14,7 +14,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-		public bool isMoving;
+		public bool isMoving = false;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -30,14 +30,13 @@ namespace StarterAssets
 
         private void Update()
         {
-			
+	
         }
 
 #if ENABLE_INPUT_SYSTEM
         public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
-			
 			
 		}
 
@@ -90,6 +89,13 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+
+		void Animations()
+		{
+            isMoving = move.magnitude > 0;
+
+            animator.SetBool("isMoving", isMoving);
+        }
 
        
 
