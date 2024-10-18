@@ -15,6 +15,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool isMoving = false;
+		public bool isShooting;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -30,7 +31,7 @@ namespace StarterAssets
 
         private void Update()
         {
-	
+			;
         }
 
 #if ENABLE_INPUT_SYSTEM
@@ -57,6 +58,8 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+
 #endif
 
 
@@ -90,12 +93,11 @@ namespace StarterAssets
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
 
-		void Animations()
+		private void FireInput(bool newFireState)
 		{
-            isMoving = move.magnitude > 0;
+			isShooting = newFireState;
+		}
 
-            animator.SetBool("isMoving", isMoving);
-        }
 
        
 
