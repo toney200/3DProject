@@ -44,16 +44,19 @@ public class Weapon : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
+           
+
             //Add force to object that is hit
-            if(hit.rigidbody != null)
+            if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-
+         }
           /*  GameObject impactGameObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGameObject, 0.5f);*/
 
 
-        }
     }
 }
+
+
