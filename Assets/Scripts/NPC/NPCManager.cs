@@ -93,15 +93,6 @@ public class NPCManager : MonoBehaviour
         }*/
     }
 
-    void Attack()
-    {
-
-    }
-
-    void Chase()
-    {
-
-    }
 
     IEnumerator NPCWait(float time)
     {
