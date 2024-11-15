@@ -101,6 +101,7 @@ public class NPCManager : MonoBehaviour
             isWaiting = true;
             
             yield return new WaitForSeconds(time);
+
             Debug.Log("Waiting for " + time);
             isWaiting = false;
         }

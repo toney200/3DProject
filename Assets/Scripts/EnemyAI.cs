@@ -8,6 +8,9 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LayerMask isGround;
     public LayerMask isPlayer;
+    public GameObject projectile;
+    public GameObject projectileSpawnPoint;
+    
 
     //Patroling
     public Vector3 walkPoint;
@@ -98,7 +101,29 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+        //Enemy stops moving
+        agent.SetDestination(transform.position);
+        //Enemy looks at player
+        transform.LookAt(player.position);
 
+        if (!alreadyAttacked) { 
+
+            Vector3 spawnPoint = transform.Find("SpawnPoint").position;
+            
+            Rigidbody rb = Instantiate(projectile, spawnPoint, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+           // rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+
+        }
+
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
     }
 
 }
