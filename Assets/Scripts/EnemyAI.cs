@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask isPlayer;
     public GameObject projectile;
     public GameObject projectileSpawnPoint;
+    Animator animator;
     
 
     //Patroling
@@ -31,6 +32,7 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -42,6 +44,7 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange)
         {
             Patrolling();
+
         }
 
         if (playerInSightRange && !playerInAttackRange) 
