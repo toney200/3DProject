@@ -44,19 +44,35 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange)
         {
             Patrolling();
+            animator.SetBool("isPatroling", true);
 
+        }
+        else
+        {
+            animator.SetBool("isPatroling", false);
         }
 
         if (playerInSightRange && !playerInAttackRange) 
         {
             ChasePlayer();
             Debug.Log("Player detected, chasing..");
+            animator.SetBool("isShooting", true);
+        }
+        else
+        {
+            animator.SetBool("isShooting", false);
         }
 
-        if(playerInSightRange && playerInAttackRange)
+        if (playerInSightRange && playerInAttackRange)
         {
             AttackPlayer();
+            animator.SetBool("isShooting", true);
         }
+        else
+        {
+            animator.SetBool("isShooting", false);
+        }
+
 
 
 
