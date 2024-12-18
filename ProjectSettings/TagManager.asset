@@ -8,6 +8,7 @@ TagManager:
   - CinemachineTarget
   - NPC
   - Enemy
+  - Collectable
   layers:
   - Default
   - TransparentFX

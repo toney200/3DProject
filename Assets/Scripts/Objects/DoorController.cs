@@ -6,17 +6,19 @@ public class DoorController : MonoBehaviour
 {
 
     private Animator doorAnimator;
+    
 
     private void Start()
     {
         doorAnimator = GetComponent<Animator>();    
+        
     }
     //Check for player
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && Collectable.collected)
         {
-            //Debug.Log("Door opened");
+            Debug.Log("Door opened");
             //Door opens
             doorAnimator.SetBool("character_nearby", true);
         }

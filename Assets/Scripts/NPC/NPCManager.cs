@@ -8,6 +8,7 @@ public class NPCManager : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     private Rigidbody rb;
+    private Animator animator;
     public LayerMask isGround;
     public LayerMask isPlayer;
 
@@ -23,27 +24,23 @@ public class NPCManager : MonoBehaviour
     public float time;
     bool isWaiting;
 
-    //Atacking if needed
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
-
-
     //states
-    public float sightRange;
-    public float attackRange;
-    public bool playerInSightRange;
-    public bool playerInAttackRange;
+    bool isPatroling;
+   public bool isGathering;
+
+
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
-    {
-        Patrol();
+    { 
+        Patrol();  
     }
 
     void Patrol()
@@ -59,6 +56,7 @@ public class NPCManager : MonoBehaviour
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        animator.SetBool("isWalking", true);
 
         if(distanceToWalkPoint.magnitude < 1f)
         {
@@ -75,7 +73,7 @@ public class NPCManager : MonoBehaviour
             
             //Loop back to start
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count;
-            StartCoroutine(NPCWait(time));
+            //StartCoroutine(NPCWait(time));
         }
         
         agent.SetDestination(waypoints[currentWaypointIndex].position);
@@ -99,7 +97,7 @@ public class NPCManager : MonoBehaviour
         if (!isWaiting)
         {
             isWaiting = true;
-            
+          
             yield return new WaitForSeconds(time);
 
             Debug.Log("Waiting for " + time);

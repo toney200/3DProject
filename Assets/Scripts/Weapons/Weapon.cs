@@ -16,12 +16,18 @@ public class Weapon : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
-   
+    public AudioSource gunShot;
+
+    private void Start()
+    {
+        gunShot = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             {
+                gunShot.Play();
                 Shoot();
             }
         }
